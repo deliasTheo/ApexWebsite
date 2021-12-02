@@ -1,0 +1,42 @@
+
+#bg{
+    background-image:url("../media/bateauAccueil.jpg");
+    background-size:cover;
+    width:100%;
+    height: 750px;
+
+}
+
+.contenir{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    width: 500px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top:550px;
+    left: 450px;
+
+}
+#contenu{
+    width: 600px;
+    background-color: black ;
+}
+#titre{
+    position: absolute;
+    font-size: 40px;
+    top:200px;
+    left: 400px;
+
+}
+#petitTitre{
+    font-size: 20px;
+    width: 300px;
+}
+
+#grandTitre{
+    font-size: 40px;
+    width: 700px;
+}

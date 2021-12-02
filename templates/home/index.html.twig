@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BateauController!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" type="text/css" href="{{asset('css/home.css')}}">
+{% endblock %}
+
+{% block body %}
+    <center>
+        <div id="titre">
+            <p id="petitTitre">Bateaux, sauveteurs, sauvés</p>
+            <h1 id="grandTitre">Mémoire des sauvetages de France</h1>
+        </div>
+    </center>
+
+    <p id="contenu" class="contenir">Les sauvetages? Mais tout le monde en fait …
+        Si un homme tombe dans la « Baille »
+        est ce qu’on ne va pas le chercher?
+        Il n’y a à cela aucun mérite…</p>
+    <div id="bg">
+    </div>
+
+{% endblock %}
