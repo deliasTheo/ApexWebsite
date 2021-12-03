@@ -19,6 +19,21 @@ class SauveteurRepository extends ServiceEntityRepository
         parent::__construct($registry, Sauveteur::class);
     }
 
+    public function findSauveteurByName(string $query)
+    {
+        $qb = $this->createQueryBuilder('s');
+        $qb
+            ->where(
+
+                $qb->expr()->like('s.nom', ':query'),
+
+            )
+            ->setParameter('query', '%' . $query . '%');
+        return $qb
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Sauveteur[] Returns an array of Sauveteur objects
     //  */

@@ -2,7 +2,8 @@
 
 namespace App\Controller;
 
-use App\Repository\SauvetageRepository;
+
+use App\Repository\SauveteurRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -22,7 +23,7 @@ class HomeController extends AbstractController
     }
 
     #[Route('/sauveteur', name: 'sauveteur')]
-    public function sauveteur(Request $request, SauvetageRepository $repo): Response
+    public function sauveteur(Request $request, SauveteurRepository $repo): Response
     {
 
         $formSearch = $this->createFormBuilder()
@@ -41,13 +42,10 @@ class HomeController extends AbstractController
             ])
             ->getForm();
 
-        $query = $request->request->get('form')['query'];
+        $query = $request->request->get('formSearch')['query'];
         if($query) {
-            $section = $repo->findArticlesByName($query);
+            $section = $repo->findSauveteurByName($query);
         }
-
-
-
 
         return $this->render('sauveteur/index.html.twig', [
             'controller_name' => 'SauveteurController',
