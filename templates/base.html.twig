@@ -3,8 +3,9 @@
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/base.css')}}">
+        <link rel="icon"
+              href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/base.css') }}">
         <script src="https://kit.fontawesome.com/1674ea8fa5.js" crossorigin="anonymous"></script>
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -15,18 +16,19 @@
         {% endblock %}
     </head>
     <body>
+        <nav class="topbar-nav" id="topbar-nav">
+            <ul id="navbar">
+                <li class="nav"><a href="{{ path("home") }}"><img id="logo" src="{{ asset('media/logo.png') }}"></a>
 
-            <nav>
-                <ul id="navbar">
-                    <li class="nav"><a href="{{ path("home") }}"><img id="logo" src="{{ asset('media/logo.png') }}"></a>
-
-                    <li class="nav"><a href="{{ path("sauveteur") }}">Sauveteurs</a></li>
-                    <li class="nav"><a href="{{ path("bateau") }}">Bateau</a></li>
-                    <li class="nav"><a href="{{ path("sauver") }}">Personnes sauvées</a></li>
-                    <li class="nav login"><a href="{{ path("sauver") }}"><i class="fas fa-user"></i>Login</a></li>
-                </ul>
-            </nav>
+                <li class="nav"><a href="{{ path("sauveteur") }}">Sauveteurs</a></li>
+                <li class="nav"><a href="{{ path("bateau") }}">Bateau</a></li>
+                <li class="nav"><a href="{{ path("sauver") }}">Personnes sauvées</a></li>
+                <li class="nav login"><a href="{{ path("sauver") }}"><i class="fas fa-user"></i>Login</a></li>
+            </ul>
+        </nav>
+        <main class="main-content-container" id="main-content-container">
             {% block body %}
             {% endblock %}
+        </main>
     </body>
 </html>

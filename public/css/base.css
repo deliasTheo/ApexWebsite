@@ -104,3 +104,14 @@ li>a {
 .nav:hover{
     color: red;
 }
+
+.topbar-nav {
+    position: fixed;
+    height: 4em;
+    z-index: 5000;
+}
+
+.main-content-container {
+    position: relative;
+    margin-top: 4em;
+}

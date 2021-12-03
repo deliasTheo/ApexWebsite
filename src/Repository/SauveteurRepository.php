@@ -25,7 +25,7 @@ class SauveteurRepository extends ServiceEntityRepository
         $qb
             ->where(
 
-                $qb->expr()->like('s.nom', ':query'),
+                $qb->expr()->like('s.Nom', ':query'),
 
             )
             ->setParameter('query', '%' . $query . '%');

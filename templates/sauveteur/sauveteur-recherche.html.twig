@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if sauveteurs is defined and sauveteurs is iterable %}
+        <table>
+            <tbody>
+                {% for sauveteur in sauveteurs %}
+                    <tr>
+                        <td>
+                            {% if sauveteur.nom is defined %}
+                                {{ sauveteur.nom }}
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td>
+                            Aucun sauveteur n'a été trouvé avec le nom {{ name|default('demandé') }}.
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
+
+{% block title %}
+
+{% endblock %}
+
+

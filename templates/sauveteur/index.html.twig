@@ -11,7 +11,7 @@
 
     {{ form(form) }}
 
-{#
+
     {% if app.request.method == 'POST' %}
         <div>
             {% if articles | length == 0 %}
@@ -30,7 +30,7 @@
                 {% endfor %}
             {% endif %}
         </div>
-    {% endif %}#}
+    {% endif %}
 
 
 {% endblock %}
